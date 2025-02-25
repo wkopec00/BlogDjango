@@ -3,16 +3,11 @@
 {% block title %}My Blog{% endblock %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
     <link rel="stylesheet" href="{% static "blog/index.css" %}" />
 {% endblock %}
 
 {% block content %}
-    <header id="main-navigation">
-    <h1><a href="">Mój blog</a></h1>
-    <nav>
-        <a href=''>Wszystkie posty</a>
-    </nav>
-    </header>
     <section id="welcome">
     <header>
         <img src="{% static "blog/images/Wojtek.jpg" %}" alt="Autor tego bloga - Wojtek" />
@@ -27,19 +22,7 @@
     <section id="latest-posts">
     <h2>Najnowsze posty</h2>
     <ul>
-        <li>
-        <article class="post">
-            <a href="">
-            <img src="{% static "blog/images/motorowka.jpg" %}" alt="Wyjazd na motorówkę" />
-            <div class="post__content">
-                <h3>Wyjazd na motorówkę</h3>
-                <p>
-                Nie ma nic lepszego niż pływanie po największym jeziorze w Polsce
-                </p>
-            </div>
-            </a>
-        </article>
-        </li>
+        {% include "blog/includes/post.html" %}
     </ul>
     </section>
 
