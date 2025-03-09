@@ -2,12 +2,12 @@
 
 <li>
     <article class="post">
-        <a href="{% url "post-page" slug="wycieczka-motorowka" %}">
-        <img src="{% static "blog/images/motorowka.jpg" %}" alt="Wyjazd na motorówkę" />
+        <a href="{% url "post-page" slug=post.slug %}">
+        <img src="{% static "blog/images/"|add:post.image" %}" alt="{{ post.title }}" />
         <div class="post__content">
-            <h3>Wyjazd na motorówkę</h3>
+            <h3>{{ post.title }}</h3>
             <p>
-            Nie ma nic lepszego niż pływanie po największym jeziorze w Polsce
+            {{ post.excerpt }}
             </p>
         </div>
         </a>
